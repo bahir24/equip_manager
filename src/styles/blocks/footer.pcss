@@ -1,0 +1,32 @@
+.footer {
+  height: 10vh;
+  border-top: 1px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.footer__columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__column-content {
+  text-decoration: none;
+  display: flex;
+  // text-transform: capitalize;
+}
+
+.footer__column:nth-child(2) {
+  .footer__column-content {
+    object-fit: contain;
+
+    &:before {
+      content: url('/src/images/content/spb_symbol1.png');
+      display: block;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      margin-right: 5px;
+    }
+  }
+}

@@ -6,10 +6,97 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
+    title Equipmanager - online booking engine, and movable managment system
+    link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+             
+          section.hero            
+            header.header
+              .container      
+                .header__up-row
+                  h2.header__slogan Лучшие решения для отрасли аренды техники!
+                  .logo
+                    +image('content/logo.jpeg', 'logo-pic')
+                .header__middle-row
+                  button.btn.btn--enter Вход
+                .header__down-row
+                  nav.nav
+                    ul.nav__list
+                      - 
+                        var items= [ 
+                          {
+                              name: 'о компании',
+                              link: 'https://first'
+                          },{
+                              name: 'вакансии',
+                              link: 'https://second'
+                          },{
+                              name: 'контакты',
+                              link: 'https://third'
+                          }
+                        ]
+                      each item in items                       
+                        li.nav__item
+                          a(href=`${item.link}`).nav__link #{item.name}
+            .container
+              .hero__content
+                p.hero__content-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eligendi incidunt rem illum maiores hic, assumenda illo, excepturi magni iusto eius laudantium unde! Ipsum accusantium ex voluptatum labore, iure in!
+          section.offer
+            .container
+              .offer__columns
+                .offer__column-left
+                  h2.item-card__head 
+                    |Онлайн
+                    br
+                    |бронирование
+                  .item-card         
+                    .item-card__mark
+                      +image('content/hit_sales.png', 'item-card__mark-pic')           
+                    .item-card__image
+                      +icon('monitor', 'item-card__image-icon')
+                    .item-card__description
+                      ul.item-card__description-list
+                        - for (var i = 1; i < 4; i++)
+                          li.item-card__description-item Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    .item-card__buttons
+                      button.btn узнать больше
+                      button.btn попробовать бесплатно
+                .offer__column-right
+                  h2.item-card__head
+                    |Система
+                    br
+                    |управления
+                  .item-card                    
+                    .item-card__image
+                      +icon('monitor', 'item-card__image-icon')
+                    .item-card__description
+                      ul.item-card__description-list
+                        - for (var i = 1; i < 4; i++)
+                          li.item-card__description-item Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    .item-card__buttons
+                      button.btn узнать больше
+                      button.btn попробовать бесплатно
+          section.banner
+            .container
+              p.banner__text С нами работают более 30 компаний!
+          footer.footer
+            .container
+              ul.footer__columns
+                - 
+                  var items= [ 
+                    {
+                        name: 'Novonline - rental software company',
+                        link: '#'
+                    },{
+                        name: 'Санкт-Петербург',
+                        link: '#'
+                    },{
+                        name: 'Cвязаться с нами',
+                        link: 'https://third'
+                    }
+                  ]
+                each item in items                       
+                  li.footer__column
+                    a(href=`${item.link}`).footer__column-content #{item.name}          
