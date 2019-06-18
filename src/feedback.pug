@@ -1,0 +1,105 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Equipmanager - online booking engine, and movable managment system
+    link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
+  body
+    .wrapper
+      .maincontent
+        header.header               
+          .header__up-row
+            .container.hero__container-row
+              h2.header__slogan Лучшие решения для отрасли аренды техники!
+              .logo
+                +image('content/logo.jpeg', 'logo-pic')
+          .header__middle-row
+            .container
+              button.btn.btn--enter Войти
+          .header__down-row
+            .container 
+              nav.nav
+                ul.nav__list
+                  - 
+                    var items= [ 
+                      {
+                          name: 'о компании',
+                          link: './feedback.html'
+                      },{
+                          name: 'вакансии',
+                          link: 'https://second'
+                      },{
+                          name: 'контакты',
+                          link: 'https://third'
+                      }
+                    ]
+                  each item in items                       
+                    li.nav__item
+                      a(href=`${item.link}`).nav__link #{item.name}
+        section.feedback          
+          .container.container-feedback
+            h2.feedback__head Записаться на тест или задайте нам вопрос
+            form(
+              method="post"
+            ).form
+              ul.form__rows
+                - 
+                  var rows= [ 
+                    {
+                        name: 'E-mail',
+                        type: 'input',
+                        placeholder: 'Ваш E-mail',
+                        value: '1'
+                    },{
+                        name: 'Имя',
+                        type: 'input',
+                        placeholder: 'Имя',
+                        value: '2'
+                    },{
+                        name: 'Телефон',
+                        type: 'input',
+                        placeholder: 'Номер телефона',
+                        value: '3'
+                    },{
+                        name: 'Текст сообщения',
+                        type: 'textarea',
+                        placeholder: '',
+                        value: '4'
+                    }                    
+                  ]
+                each row in rows                   
+                  li.form__row
+                    label.form__row-label
+                      h4.form__row-head #{row.name}
+                      #{row.type}(
+                        placeholder=`${row.placeholder}`
+                        class=`form__row-${row.type}`
+                        class=`form__row-${row.value}`
+                        ).form__row-element
+              .form__send
+                button(
+                  type="submit"
+                ).btn.btn--form.btn__send Отправить заявку
+        footer.footer
+          .container
+            ul.footer__columns
+              - 
+                var items= [ 
+                  {
+                      name: 'Novonline - rental software company',
+                      link: '#'
+                  },{
+                      name: 'Санкт-Петербург',
+                      link: '#'
+                  },{
+                      name: 'Cвязаться с нами',
+                      link: 'https://third'
+                  }
+                ]
+              each item in items                       
+                li.footer__column
+                  a(href=`${item.link}`).footer__column-content #{item.name}          
