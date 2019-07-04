@@ -28,13 +28,13 @@ html(lang="en")
                     var items= [ 
                       {
                           name: 'о компании',
-                          link: './feedback.html'
+                          link: './about.html'
                       },{
                           name: 'вакансии',
                           link: 'https://second'
                       },{
                           name: 'контакты',
-                          link: 'https://third'
+                          link: './feedback.html'
                       }
                     ]
                   each item in items                       
@@ -43,47 +43,45 @@ html(lang="en")
         section.feedback          
           .container.container-feedback
             h2.feedback__head Записаться на тест или задайте нам вопрос
-            form(
-              method="post"
-            ).form
-              ul.form__rows
-                - 
-                  var rows= [ 
-                    {
-                        name: 'E-mail',
-                        type: 'input',
-                        placeholder: 'Ваш E-mail',
-                        value: '1'
-                    },{
-                        name: 'Имя',
-                        type: 'input',
-                        placeholder: 'Имя',
-                        value: '2'
-                    },{
-                        name: 'Телефон',
-                        type: 'input',
-                        placeholder: 'Номер телефона',
-                        value: '3'
-                    },{
-                        name: 'Текст сообщения',
-                        type: 'textarea',
-                        placeholder: '',
-                        value: '4'
-                    }                    
-                  ]
-                each row in rows                   
-                  li.form__row
-                    label.form__row-label
-                      h4.form__row-head #{row.name}
-                      #{row.type}(
-                        placeholder=`${row.placeholder}`
-                        class=`form__row-${row.type}`
-                        class=`form__row-${row.value}`
-                        ).form__row-element
-              .form__send
-                button(
-                  type="submit"
-                ).btn.btn--form.btn__send Отправить заявку
+            form(                
+                method="post"
+                action="msg.php"
+              ).form
+                ul.form__rows
+                  - 
+                    var rows= [ 
+                      {
+                          name: 'E-mail',
+                          type: 'input',
+                          placeholder: 'Ваш E-mail',
+                          element: 'email'
+                      },{
+                          name: 'Имя',
+                          type: 'input',
+                          placeholder: 'Имя',
+                          element: 'name'                     
+                      },{
+                          name: 'Телефон',
+                          type: 'input',
+                          placeholder: 'Номер телефона',
+                          element: 'tel'                     
+                      },{
+                          name: 'Текст сообщения',
+                          type: 'textarea',
+                          placeholder: 'Введите текст...',
+                          element: 'services'
+                      }
+                    ]
+                  each row in rows                   
+                    li.form__row
+                      label.form__row-label
+                        h4.form__row-head #{row.name}
+                        #{row.type}(
+                          placeholder=`${row.placeholder}`
+                          name=`${row.element}`
+                          class=`form__row-${row.type}`
+                          )
+                button().btn.btn--form Отправить заявку
         footer.footer
           .container
             ul.footer__columns
@@ -102,4 +100,4 @@ html(lang="en")
                 ]
               each item in items                       
                 li.footer__column
-                  a(href=`${item.link}`).footer__column-content #{item.name}          
+                  a(href=`${item.link}`).footer__column-content #{item.name}

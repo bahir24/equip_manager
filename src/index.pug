@@ -29,13 +29,13 @@ html(lang="en")
                           var items= [ 
                             {
                                 name: 'о компании',
-                                link: './feedback.html'
+                                link: './about.html'
                             },{
                                 name: 'вакансии',
                                 link: 'https://second'
                             },{
                                 name: 'контакты',
-                                link: 'https://third'
+                                link: './feedback.html'
                             }
                           ]
                         each item in items                       
@@ -43,12 +43,15 @@ html(lang="en")
                             a(href=`${item.link}`).nav__link #{item.name}
             .container
               .hero__content
-                p.hero__content-text Equipmanager - это административно-программный комплекс, разработанный для увеличения онлайн продаж аренды строительной техники и оборудования. Инновационное онлайн бронирование увеличивает шанс продажи оборудования, а система управления позволяет управлять техникой в любой момент времени. 
+                p.hero__content-text Equipmanager - это административно-программный комплекс, разработанный для увеличения онлайн продаж, аренды строительной техники и оборудования. Инновационное онлайн бронирование увеличивает шанс продажи оборудования, а система управления позволяет управлять техникой в любой момент времени. 
           section.offer
             .container
               .offer__columns
                 .offer__column-left
-                  h2.item-card__head Онлайн бронирование
+                  h2.item-card__head 
+                    |Онлайн
+                    br
+                    | бронирование
                   .item-card         
                     .item-card__mark
                       +image('content/hit_sales.png', 'item-card__mark-pic')           
@@ -87,10 +90,15 @@ html(lang="en")
                       each card in cards                       
                         li.item-card__description-item #{card.name}
                     .item-card__buttons
-                      button.btn узнать больше
+                      a(
+                        href="./about-booking-online.html"
+                      ).btn узнать больше
                       button.btn попробовать бесплатно
                 .offer__column-right
-                  h2.item-card__head Система управления
+                  h2.item-card__head 
+                    |Система
+                    br
+                    |управления
                   .item-card                    
                     .item-card__image
                       +image('content/1st_monitor.png', 'item-card__image-icon')
@@ -121,8 +129,12 @@ html(lang="en")
                       each card in cards                       
                         li.item-card__description-item #{card.name}                          
                     .item-card__buttons
-                      button.btn узнать больше
-                      button.btn попробовать бесплатно
+                      a(
+                        href='./booking.html'
+                      ).btn узнать больше
+                      a(
+                        href='./feedback.html'
+                      ).btn попробовать бесплатно
           section.banner
             .container
               p.banner__text С нами работают более 30 компаний!
