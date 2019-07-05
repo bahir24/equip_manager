@@ -1,0 +1,16 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Novonline: Online Booking Engine, software reservation system
+    link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
+  body
+    .wrapper
+      .maincontent
+        include ./sections/header.pug
+        include ./sections/about-section.pug
+        include ./sections/footer.pug

@@ -1,0 +1,19 @@
+footer.footer
+          .container
+            ul.footer__columns
+              - 
+                var items= [ 
+                  {
+                      name: 'Novonline - rental software company',
+                      link: '#'
+                  },{
+                      name: 'Санкт-Петербург',
+                      link: '#'
+                  },{
+                      name: 'Cвязаться с нами',
+                      link: 'https://third'
+                  }
+                ]
+              each item in items                       
+                li.footer__column
+                  a(href=`${item.link}`).footer__column-content #{item.name}          

@@ -16,7 +16,10 @@ html(lang="en")
             .container.hero__container-row
               h2.header__slogan Лучшие решения для отрасли аренды техники!
               .logo
-                +image('content/logo.jpeg', 'logo-pic')
+                a(
+                  href="./index.html"
+                ).logo__link
+                  +image('content/logo.jpeg', 'logo__link-pic')
           .header__middle-row
             .container
               button.btn.btn--enter Войти

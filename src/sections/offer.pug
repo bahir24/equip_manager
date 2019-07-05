@@ -1,0 +1,91 @@
+section.offer
+          .container
+            .offer__columns
+              .offer__column-left
+                h2.item-card__head 
+                  |Онлайн
+                  br
+                  | бронирование
+                .item-card         
+                  .item-card__mark
+                    +image('content/hit_sales.png', 'item-card__mark-pic')           
+                  .item-card__image
+                    +image('content/2nd_monitor.png', 'item-card__image-icon')
+                  .item-card__description
+                    ul.item-card__description-list
+                      - 
+                        var cards= [ 
+                          {
+                              name: 'Быстрая регистрация',
+                              link: '#'
+                          },{
+                              name: 'Увеличивает конверсию и продажи с сайта',
+                              link: '#'
+                          },{
+                              name: 'Гибкое управление тарифами и скидками',
+                              link: '#'
+                          },{
+                              name: 'Дополнительные услуги и оборудование',
+                              link: '#'
+                          },{
+                              name: 'Гарантированное и негарантированное бронирование',
+                              link: '#'
+                          },{
+                              name: 'Вам приходят уже готовые бронирования',
+                              link: '#'
+                          },{
+                              name: 'Безопасное соединение ',
+                              link: '#'
+                          },{
+                              name: 'Работает на всех устройствах',
+                              link: '#'
+                          }
+                        ]
+                    each card in cards                       
+                      li.item-card__description-item #{card.name}
+                  .item-card__buttons
+                    a(
+                      href="./booking.html"
+                    ).btn узнать больше
+                    button.btn попробовать бесплатно
+              .offer__column-right
+                h2.item-card__head 
+                  |Система
+                  br
+                  |управления
+                .item-card                    
+                  .item-card__image
+                    +image('content/1st_monitor.png', 'item-card__image-icon')
+                  .item-card__description
+                    ul.item-card__description-list
+                      - 
+                        var cards= [ 
+                          {
+                              name: 'Управление техникой и водителем',
+                              link: '#'
+                          },{
+                              name: 'Управление дополнительным оборудованием и доставкой',
+                              link: '#'
+                          },{
+                              name: 'Гибкое управление тарифами и скидками',
+                              link: '#'
+                          },{
+                              name: 'Управление клиентами, сотрудниками, агентами',
+                              link: '#'
+                          },{
+                              name: 'Управление документами',
+                              link: '#'
+                          },{
+                              name: 'Системный журнал (история всех видов деятельности)',
+                              link: '#'
+                          }
+                        ]
+                    each card in cards                       
+                      li.item-card__description-item #{card.name}                          
+                  .item-card__buttons
+                    a(
+                      href='./booking.html'
+                    ).btn узнать больше
+                    a(
+                      href='./feedback.html'
+                    ).btn попробовать бесплатно
