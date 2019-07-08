@@ -4,11 +4,9 @@ footer.footer
               - 
                 var items= [ 
                   {
-                      name: 'Novonline - rental software company',
-                      link: '#'
+                      name: 'Novonline - rental software company',                      
                   },{
-                      name: 'Санкт-Петербург',
-                      link: '#'
+                      name: 'Санкт-Петербург',                      
                   },{
                       name: 'Cвязаться с нами',
                       link: 'https://third'
@@ -16,4 +14,4 @@ footer.footer
                 ]
               each item in items                       
                 li.footer__column
-                  a(href=`${item.link}`).footer__column-content #{item.name}          
+                  a.footer__column-content #{item.name}          

@@ -137,6 +137,11 @@ module.exports = (env, argv) => {
         template: "src/management.pug",
         chunks: ["main"]
       }),   
+      new HtmlWebpackPlugin({
+        filename: "vacancy.html",
+        template: "src/vacancy.pug",
+        chunks: ["main"]
+      }),   
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],

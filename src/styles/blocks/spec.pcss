@@ -1,0 +1,38 @@
+.spec {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.spec__entry {
+  &:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.spec__list {
+  margin-bottom: 20px;
+}
+
+
+.charges__head,
+.requirements__head,
+.salary__head {
+  font-size: 20px;
+  text-decoration: underline;
+  font-weight: 600;
+
+  &:after {
+    content: ':';
+  }
+}
+
+.charges__item,
+.requirements__item,
+.salary__item {
+  font-weight: 400;
+
+  &:before {
+    content: '-';
+    margin-right: 5px;
+  }
+}

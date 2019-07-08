@@ -11,38 +11,7 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        header.header               
-          .header__up-row
-            .container.hero__container-row
-              h2.header__slogan Лучшие решения для отрасли аренды техники!
-              .logo
-                a(
-                  href="./index.html"
-                ).logo__link
-                  +image('content/logo.jpeg', 'logo__link-pic')
-          .header__middle-row
-            .container
-              button.btn.btn--enter Войти
-          .header__down-row
-            .container 
-              nav.nav
-                ul.nav__list
-                  - 
-                    var items= [ 
-                      {
-                          name: 'о компании',
-                          link: './about.html'
-                      },{
-                          name: 'вакансии',
-                          link: 'https://second'
-                      },{
-                          name: 'контакты',
-                          link: './feedback.html'
-                      }
-                    ]
-                  each item in items                       
-                    li.nav__item
-                      a(href=`${item.link}`).nav__link #{item.name}
+        include ./sections/header.pug
         section.feedback          
           .container.container-feedback
             h2.feedback__head Записаться на тест или задайте нам вопрос
@@ -85,22 +54,4 @@ html(lang="en")
                           class=`form__row-${row.type}`
                           )
                 button().btn.btn--form Отправить заявку
-        footer.footer
-          .container
-            ul.footer__columns
-              - 
-                var items= [ 
-                  {
-                      name: 'Novonline - rental software company',
-                      link: '#'
-                  },{
-                      name: 'Санкт-Петербург',
-                      link: '#'
-                  },{
-                      name: 'Cвязаться с нами',
-                      link: 'https://third'
-                  }
-                ]
-              each item in items                       
-                li.footer__column
-                  a(href=`${item.link}`).footer__column-content #{item.name}
+        include ./sections/footer.pug

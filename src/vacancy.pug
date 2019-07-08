@@ -1,0 +1,74 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Equipmanager - online booking engine, and movable managment system
+    link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
+  body
+    .wrapper
+      .maincontent
+        include ./sections/header.pug
+        section.vacancy
+          .container
+            h2.vacancy__head Вакансии
+            .vacancy__content
+              .spec
+                .spec__entry
+                  p.spec__entry В нашу молодую и амбициозную команду требуется менеджер по продажам. 
+                  p.spec__entry Если вам нравиться решать интересные и полезные задачи и приносить реальную пользу для рынка мы ждем вас в нашей компании.
+                ul.spec__list
+                  li.spec__item
+                    .charges
+                      h5.charges__head Обязанности
+                      ul.charges__list
+                        - 
+                          var charges= [ 
+                            {
+                                name: 'много работать '
+                            },{
+                                name: 'продавать полезное программное обеспечение'
+                            }
+                          ]
+                        each charge in charges
+                          li.charges__item #{charge.name}
+                  li.spec__item
+                    .requirements
+                      h5.requirements__head Требования
+                      ul.requirements__list
+                        - 
+                          var requirements= [ 
+                            {
+                                name: 'желание служить и помогать клиентам'
+                            },{
+                                name: 'желательно высшее настроение'
+                            },{
+                                name: 'умение убеждать и побеждать'
+                            },{
+                                name: 'пунктуальность'
+                            },{
+                                name: 'умение доводить дело ко конца'                          
+                            },{
+                                name: 'активная жизненная позиция'
+                            }
+                          ]
+                        each requirement in requirements
+                          li.requirements__item #{requirement.name}
+                  li.spec__item
+                    .salary
+                      h5.salary__head Оплата
+                      ul.salary__list
+                        - 
+                          var salaryes= [ 
+                            {
+                                name: 'договорная'
+                            }
+                          ]
+                        each salary in salaryes
+                          li.salary__item #{salary.name}
+                .spec__about
+                  p.spec__about-text Если вы хотите стать часть нашей команды отправьте своё резюме по адресу: info@nvln.net
+        include ./sections/footer.pug
