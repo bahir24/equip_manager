@@ -4,14 +4,20 @@ footer.footer
               - 
                 var items= [ 
                   {
-                      name: 'Novonline - rental software company',                      
+                      name: 'Novonline - rental software company',
+                      pic: ''                
                   },{
-                      name: 'Санкт-Петербург',                      
+                      name: 'Санкт-Петербург',
+                      pic: 'spb'
                   },{
                       name: 'Cвязаться с нами',
-                      link: 'https://third'
+                      link: 'https://third',
+                      pic: ''
                   }
                 ]
               each item in items                       
-                li.footer__column
+                li.footer__column                  
+                  //- img(
+                  //-   src="./spb.png"
+                  //- )
                   a.footer__column-content #{item.name}          
