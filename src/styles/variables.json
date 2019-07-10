@@ -1,6 +1,9 @@
 {
-  "text-color": "#414c63",
-  "links-color": "#4b6fd7",
+  "text-color": "#000000",
+  "gray-text-color": "#b1b1b1",
+  "orange": "#f09237",
+  "bg-color": "#b1b1b1",
+  "bg-color-header": "#202124",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",

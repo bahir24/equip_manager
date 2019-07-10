@@ -7,12 +7,26 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Equipmanager - online booking engine, and movable managment system
-    link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
+    //- link(href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet")
   body
     .wrapper
+      header.header
+        .container
+          .header__rows
+            .header__top
+              .logo
+                +image('icons/logo.png', 'logo-pic')
+              .header__desc
+              h1.header__desc-head Модуль бронирования
+              h3.header__desc-choice Выберите на какие даты вам нужна техника
+            .header__bottom
+              nav.nav
+                ul.nav__list
+                  li.nav__item
+                    +image('icons/marker.jpg', 'nav__item-pic')
+                    h3.nav__item-text Техника   
       .maincontent
-        include ./sections/header.pug
-        include ./sections/hero.pug
-        include ./sections/offer.pug
-        include ./sections/banner.pug
-        include ./sections/footer.pug
+        section.hero
+          .hero__content
+            p.hero__content-paragraph Услуга компании Новонлайн - Equipmanager - комплексное решение по повышению эффективности продаж строительной техники и оборудования.
+            p.hero__content-paragraph Инновационное управление техникой и прибыльное онлайн бронирование позволяет добиться устойчивого роста продаж через интернет.

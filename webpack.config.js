@@ -117,31 +117,6 @@ module.exports = (env, argv) => {
         template: "src/index.pug",
         chunks: ["main"]
       }),
-      new HtmlWebpackPlugin({
-        filename: "feedback.html",
-        template: "src/feedback.pug",
-        chunks: ["main"]
-      }),   
-      new HtmlWebpackPlugin({
-        filename: "booking.html",
-        template: "src/booking.pug",
-        chunks: ["main"]
-      }),   
-      new HtmlWebpackPlugin({
-        filename: "about.html",
-        template: "src/about.pug",
-        chunks: ["main"]
-      }),   
-      new HtmlWebpackPlugin({
-        filename: "management.html",
-        template: "src/management.pug",
-        chunks: ["main"]
-      }),   
-      new HtmlWebpackPlugin({
-        filename: "vacancy.html",
-        template: "src/vacancy.pug",
-        chunks: ["main"]
-      }),   
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],
