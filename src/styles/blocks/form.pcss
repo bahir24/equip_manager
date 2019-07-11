@@ -1,5 +1,4 @@
 .form {
-  // height: 100vh;
   text-align: center;
 }
 
@@ -16,6 +15,9 @@
   list-style-type: none;
   width: 50%;
   margin-bottom: 20px;
+  @include phones {
+    margin-bottom: 10px;
+  }
 
   &:last-child {
     .form__row-label {
@@ -25,6 +27,9 @@
         }
       }
     }
+  }
+  @include phones {
+    width: 80%;
   }
 }
 
@@ -36,11 +41,18 @@
   border: 1px solid #000;
   background: #fff;
   resize: none;
+  @include phones {
+    padding: 5px;
+    height: 30px;
+  }
 }
 
 .form__row-textarea {
   height: 120px;
   resize: none;
+  @include phones {
+    height: 60px;
+  }
 }
 
 .form__row-head {

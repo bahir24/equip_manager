@@ -14,7 +14,7 @@ html(lang="en")
         include ./sections/header.pug
         section.feedback          
           .container.container-feedback
-            h2.feedback__head Записаться на тест или задайте нам вопрос
+            h2.section-head Записаться на тест или задайте нам вопрос
             form(                
                 method="post"
                 action="robot.php"
@@ -53,5 +53,6 @@ html(lang="en")
                           name=`${row.element}`
                           class=`form__row-${row.type}`
                           )
-                button().btn.btn--form Отправить заявку
+                button.btn.btn--form
+                  h3.btn__text Отправить заявку
         include ./sections/footer.pug

@@ -1,26 +1,29 @@
 .booking {
-  margin-bottom: 30px;
-}
-
-.booking__description {
-  margin-bottom: 30px;
-  font-size: 40px;
+  padding: 30px 0;
 }
 
 .booking__clients-head,
 .booking__module-head {
-  font-size: 30px;
   font-weight: 700;
   padding: 0 10%;
   text-align: center;
   margin-bottom: 2%;
+  font-size: 30px;
+
+  @include phones {
+    font-size: 15px;
+  }
 }
 
 .booking__clients-text,
 .booking__module-text {
   font-weight: 600;
   margin-bottom: 2%;
-  font-size: 20px;
+  font-size: 30px;
+
+  @include phones {
+    font-size: 15px;
+  }
 }
 
 .booking__buttons {

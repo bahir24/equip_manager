@@ -1,6 +1,10 @@
 .spec {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
+
+  @include phones {
+    font-size: 15px;
+  }
 }
 
 .spec__entry {
@@ -13,11 +17,19 @@
   margin-bottom: 20px;
 }
 
+.spec__item {
+  font-size: 30px;
+
+  @include phones {
+    font-size: 15px;
+  }
+}
+
 
 .charges__head,
 .requirements__head,
 .salary__head {
-  font-size: 20px;
+  // font-size: 20px;
   text-decoration: underline;
   font-weight: 600;
 

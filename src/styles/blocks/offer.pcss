@@ -6,14 +6,23 @@
 .offer__columns {
   display: flex;
   width: 100%;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .offer__column-left,
 .offer__column-right {
   flex: 0.5;
   padding: 0 5%;
+  @include phones {
+    flex: none;
+  }
 }
 
 .offer__column-left {
   border-right: 2px solid rgb(139, 128, 128);
+  @include phones {
+    border-right: none;
+  }
 }

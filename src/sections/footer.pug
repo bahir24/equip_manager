@@ -1,23 +1,27 @@
 footer.footer
           .container
             ul.footer__columns
-              - 
-                var items= [ 
-                  {
-                      name: 'Novonline - rental software company',
-                      pic: ''                
-                  },{
-                      name: 'Санкт-Петербург',
-                      pic: 'spb'
-                  },{
-                      name: 'Cвязаться с нами',
-                      link: 'https://third',
-                      pic: ''
-                  }
-                ]
-              each item in items                       
-                li.footer__column                  
-                  //- img(
-                  //-   src="./spb.png"
-                  //- )
-                  a.footer__column-content #{item.name}          
+              //- - 
+              //-   var items= [ 
+              //-     {
+              //-         name: 'Novonline - rental software company',
+              //-         pic: '',
+              //-         reload: 'reload'
+              //-     },{
+              //-         name: 'Санкт-Петербург',
+              //-         pic: 'spb',
+              //-         reload: 'reload'
+              //-     },{
+              //-         name: 'Cвязаться с нами',
+              //-         link: './feedback.html',
+              //-         pic: '',
+              //-         reload: 'no-reload'
+              //-     }
+              //-   ]
+              //- each item in items                       
+              li.footer__column                           
+                p.footer__column-link Novonline - rental software company
+                p.footer__column-link Санкт-Петербург
+                a(
+                  href="./feedback.html"
+                ).footer__column-link Cвязаться с нами

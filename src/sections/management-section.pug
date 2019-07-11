@@ -1,7 +1,7 @@
 .management-section
   .container
     .management-section__content
-      h3.management-section__head Всё необходимое есть в личном кабинете
+      h3.section-head Всё необходимое есть в личном кабинете
       .desc
         ul.desc__list
           - 
@@ -15,7 +15,7 @@
                   content: 'Система управления включает в себя визуальный планировщик с полным набором инструментов необходимых для бесперебойной и удобной оперативной деятельности компании.',
                   content1: 'В два клика можно создать бронирование, открыть/закрыть продажу, либо создать и распечатать необходимые документы.',
                   content2: 'В системе все действия логируются, для возможности отслеживания изменения',
-                  content3: 'Наша система <strong>Equipmanager</strong> подразумевает интеграцию со сторонними продуктами, например, возмость подключить бухгалтерию для выгрузки счетов, GPS-трекер для мониторинга транспорта из одной программы.',
+                  content3: 'Наша система Equipmanager подразумевает интеграцию со сторонними продуктами, например, возмость подключить бухгалтерию для выгрузки счетов, GPS-трекер для мониторинга транспорта из одной программы.',
                   content4: 'Вся Ваша информация о бронированиях и клиентах, хранится в зашифрованном виде на дублирующих серверах на территории Российской Федерации',
                   type: 'ul'
               },{
@@ -26,27 +26,30 @@
             ]
           each desc in descs
             li.desc__item
-              positions
+              .positions
                 ul.positions__list
-                  li(
-                    class=`desc__item-${desc.name}`
-                    ).desc__item #{desc.content}                    
-                  li(
-                    class=`desc__item-${desc.name}`
-                  ).desc__item #{desc.content1}
-                  li(
-                    class=`desc__item-${desc.name}`
-                  ).desc__item #{desc.content2}
-                  li(
-                    class=`desc__item-${desc.name}`
-                  ).desc__item #{desc.content3}
-                  li(
-                    class=`desc__item-${desc.name}`
-                  ).desc__item #{desc.content4}
+                  if desc.content !=''
+                    li(
+                      class=`desc__item-${desc.name}`
+                      ).desc__item #{desc.content}                    
+                    li(
+                      class=`desc__item-${desc.name}`
+                    ).desc__item #{desc.content1}
+                    li(
+                      class=`desc__item-${desc.name}`
+                    ).desc__item #{desc.content2}
+                    li(
+                      class=`desc__item-${desc.name}`
+                    ).desc__item #{desc.content3}
+                    li(
+                      class=`desc__item-${desc.name}`
+                    ).desc__item #{desc.content4}
       .booking__buttons
               a(
                 href="./index.html"
-              ).btn.btn--booking на главную
+              ).btn.btn--booking
+                h3.btn__text на главную
               a(
                 href="./feedback.html"
-              ).btn попробовать
+              ).btn
+                h3.btn__text попробовать
