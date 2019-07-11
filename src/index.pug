@@ -17,15 +17,42 @@ html(lang="en")
               .logo
                 +image('icons/logo.png', 'logo-pic')
               .header__desc
-              h1.header__desc-head Модуль бронирования
-              h3.header__desc-choice Выберите на какие даты вам нужна техника
+                h1.header__desc-head Модуль бронирования
+                h3.header__desc-choice Выберите на какие даты вам нужна техника
             .header__bottom
               nav.nav
                 ul.nav__list
-                  li.nav__item
-                    +image('icons/marker.jpg', 'nav__item-pic')
-                    h3.nav__item-text Техника   
-      .maincontent
+                  - 
+                    var navs= [ 
+                      {
+                          name: 'О компании',
+                          icon: 'map',
+                          placeholder: 'Ваш E-mail',
+                          element: 'email'
+                      },{
+                          name: 'Контакты',
+                          icon: 'service',
+                          placeholder: 'Имя',
+                          element: 'name'                     
+                      },{
+                          name: 'Вакансии',
+                          icon: 'auth',
+                          placeholder: 'Номер телефона',
+                          element: 'tel'                     
+                      },{
+                          name: 'Авторизация',
+                          icon: 'pay',
+                          placeholder: 'Выберете желаемую услугу',
+                          element: 'services'
+                      }
+                    ]
+                  each nav in navs 
+                    li.nav__item
+                      a.nav__item-link
+                        h3(
+                          class=`nav__item-${nav.icon}`
+                        ).nav__item-text #{nav.name}
+      .container
         section.hero
           .hero__content
             p.hero__content-paragraph Услуга компании Новонлайн - Equipmanager - комплексное решение по повышению эффективности продаж строительной техники и оборудования.
