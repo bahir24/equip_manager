@@ -1,7 +1,3 @@
-// .nav {
-// padding-bottom: 20px;
-// }
-
 .nav__list {
   white-space: nowrap;
 }
@@ -9,35 +5,24 @@
 .nav__item {
   position: relative;
   display: inline-block;
-  width: 27%;
+  width: 25%;
   overflow: hidden;
-  // border: 1px solid black;
-  background: linear-gradient(to right, transparent 0%, 12%, $orange 12%, 85%, transparent 85%, 100%);
+  font-size: 25px;
+  padding: 1%;
+  // box-sizing: border-box;
+  background: linear-gradient(to right, transparent 0%, 10%, $orange 10%, 90%, transparent 90%);
 
-  &:first-child {
-    left: 0;
-    // background: linear-gradient(to right, $orange 0%, 86%, transparent 86% 100%);
-  }
+  // &:first-child {
+  //   background: linear-gradient(to right, transparent 0%, 10%, $orange 10%, 90%, transparent 90%);
+  // }
 
-  &:nth-child(2) {
-    right: 2%;
-    // background: linear-gradient(to right, transparent 0%, 14%, $orange 0%, 86%, transparent 86% 100%);
-  }
+  // &:last-child {
+  //   background: linear-gradient(to right, transparent 0%, 10%, $orange 10%, 90%, transparent 90%);
+  // }
 
-  &:nth-child(3) {
-    right: 4%;
-    // background: linear-gradient(to right, transparent 0%, 14%, $orange 0%, 86%, transparent 86% 100%);
-  }
-
-  &:last-child {
-    right: 6%;
-    // background: linear-gradient(to left, $orange 0%, 86%, transparent 86% 100%);
-  }
-
-
-  &:last-child {
-    margin-right: 0;
-  }
+  // &:last-child {
+  //   margin-right: 0;
+  // }
 
   &:after {
     content: '';
@@ -51,15 +36,31 @@
     border-right: 50px transparent solid;
     border-bottom: 150px transparent solid;
     border-left: 50px $orange solid;
-    transform: translate3d(45%, 50%, 0);
+    transform: translate3d(50%, 50%, 0);
     right: 0;
+    bottom: 50%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 300px;
+    border: 100px;
+    border-top: 150px $orange solid;
+    border-right: 50px $orange solid;
+    border-bottom: 150px $orange solid;
+    border-left: 50px transparent solid;
+    transform: translate3d(-38%, 50%, 0);
+    left: 0;
     bottom: 50%;
   }
 }
 
 .nav__item-link {
   width: 100%;
-  padding: 6% 10%;
 }
 
 .nav__item-text {
@@ -72,8 +73,8 @@
   &:before {
     content: '';
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 1.5em;
+    height: 1.5em;
     margin-right: 10px;
   }
 }
