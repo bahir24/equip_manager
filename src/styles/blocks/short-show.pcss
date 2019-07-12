@@ -7,12 +7,41 @@
 
 .short-show__item {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  &:nth-child(2n+1) {
+    flex-direction: row-reverse;
+
+    // .short-show__desc {
+    //   .short-show__text {
+    //     text-align: left;
+    //   }
+    // }
+  }
 }
 
 .short-show__sign {
-  width: 15%;
+  width: 22%;
+  padding: 1%;
+  // margin-right: 4%;
+  align-self: flex-start;
 }
 
 .short-show__desc {
-  width: 70%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.short-show__text {
+  display: block;
+  text-align: right;
+
+  &--rightalign {
+    text-align: left;
+  }
 }

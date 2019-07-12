@@ -60,9 +60,9 @@ module.exports = (env, argv) => {
           plugins: [
             { removeTitle: true },
             {
-              removeAttrs: {
-                attrs: "(fill|stroke)"
-              }
+              // removeAttrs: {
+              //   attrs: "(fill|stroke)"
+              // }
             }
           ]
         }
