@@ -24,35 +24,50 @@ html(lang="en")
                     var rows= [ 
                       {
                           name: 'E-mail',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Ваш E-mail',
-                          element: 'email'
+                          element: 'email',
+                          type: 'email'
                       },{
                           name: 'Имя',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Имя',
-                          element: 'name'                     
+                          element: 'name',
+                          type: 'text'
                       },{
                           name: 'Телефон',
-                          type: 'input',
+                          tag: 'input',
                           placeholder: 'Номер телефона',
-                          element: 'tel'                     
+                          element: 'tel',
+                          type: 'number'
                       },{
                           name: 'Текст сообщения',
-                          type: 'textarea',
+                          tag: 'textarea',
                           placeholder: 'Введите текст...',
-                          element: 'services'
+                          element: 'services',
+                          type: 'text'
+                      },{
+                          name: 'Ваше сообщение успешно отправлено',
+                          tag: ''                          
                       }
                     ]
                   each row in rows                   
                     li.form__row
-                      label.form__row-label
-                        h4.form__row-head #{row.name}
-                        #{row.type}(
-                          placeholder=`${row.placeholder}`
-                          name=`${row.element}`
-                          class=`form__row-${row.type}`
-                          )
+                      if row.tag!== ''
+                        label.form__row-label
+                          h4.form__row-head #{row.name}                          
+                          #{row.tag}(
+                            placeholder=`${row.placeholder}`
+                            name=`${row.element}`
+                            class=`form__row-${row.tag}`
+                            type=`${row.type}`
+                            required
+                            )
+                          .error
+                      else
+                        h4.form__sent-head #{row.name}
+                        button.btn.btn__text.btn__other Отправить еще одно
                 button.btn.btn--form
                   h3.btn__text Отправить заявку
+            .feedback__send
         include ./sections/footer.pug

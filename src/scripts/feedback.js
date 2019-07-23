@@ -5,16 +5,29 @@ sendButton.addEventListener('click', function (event) {
   event.preventDefault();
 
   if (validateForm(form)) {
-  var data = {
-    email: form.elements.email.value,
-    name: form.elements.name.value,
-    tel: form.elements.tel.value,
-    service: form.elements.services.value
+    var data = {
+      email: form.elements.email.value,
+      name: form.elements.name.value,
+      tel: form.elements.tel.value,
+      service: form.elements.services.value
+    }
+    const btnOther = document.querySelector('.btn__other');
+    const sent = document.querySelector('.form__rows > li:last-child');
+    btnOther.addEventListener('click', function (event) {
+    event.preventDefault();
+    sent.classList.remove("form__row--active");
+    var i;
+    for (i = 0; i < data.lendth; i++) {
+    form.elements.value = '';
+    }
+    });
+    sent.classList.add("form__row--active");
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', 'robot.php');
+    xhr.send(JSON.stringify(data));
   }
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-  xhr.open('POST', 'robot.php');
-  xhr.send(JSON.stringify(data));
+
 });
 
 function validateForm(form) {
@@ -38,3 +51,6 @@ function validateField(field) {
   field.nextElementSibling.textContent = field.validationMessage;
   return field.checkValidity();
 }
+
+
+
